@@ -1,0 +1,36 @@
+A.	Create a role to provide update privileges to the categories table (either here in discussion format or in MySQL Workbench)  
+
+CREATE ROLE updater;
+GRANT updater TO guitar_admin@localhost;
+GRANT UPDATE ON guitar.* TO updater;
+
+B.	Grant privileges to the role and, assign users to the role (either here in discussion format or in MySQL Workbench)  
+  
+GRANT INSERT, UPDATE, DELETE ON guitar.* TO updater;
+      GRANT updater TO guitar_admin@localhost;
+
+
+C.	Explain why roles would be useful.  
+  
+Roles are very useful. If your database is small, you can assign privileges to users directly and you don’t get much benefit from roles. But if you have large database with hundreds of users, it is hard to grant privileges to each individual users. It is much easier that we create roles. Roles have various privileges.  Then we assign users to those roles. That’s it. If we ever hire a new employer, we just add this user to the role and role has already privileges. 
+We create roles as:
+CREATE role1, role2, role3;
+Now we can give privileges to each role now:
+GRANT ALL 
+ON guitar.* 
+TO role1;
+
+GRANT SELECT
+ON guitar.* 
+TO role2;
+
+GRANT INSERT, UPDATE, DELETE
+ON guitar.* 
+TO role3;
+
+Now we can assign roles to users
+GRANT role2,  role3 
+TO guitar_user@localhost,   guitar_admin@localhost;
+
+As you can see, we can assign multiple roles to one user, and multiple roles to multiple users at one.
+
