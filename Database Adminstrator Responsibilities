@@ -1,0 +1,11 @@
+EXECUTIVE SUMMARY 
+
+
+
+
+
+Database administrator can be one person or a group of people or even outsourced company. They are responsible for managing all the activities related to database system. 
+Mainly database administrator manages, secures, backs up and does other database related tasks. 
+First of all, database administrator should choose database management system like Oracle, MySQL, SQL Server and others for the company, next choose hardware and install DBMS. 
+Next, administrator should secure the database so that unauthorized users cannot access the database by creating roles and users. Each role has access to list of tables or views. Those access types can be View, Delete, Update, Insert or combination of these.
+When company is large, administrator creates several roles like office manager, manager, accountant and so on, and assign privileges to each roles. Now all we have to do is to assign users to roles. In this method we don’t have to assign each privilege to each user. For example, we hire new manager, we add his username to manager role, that’s it.
