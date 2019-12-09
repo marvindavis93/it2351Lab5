@@ -1,0 +1,4 @@
+These variables store the active MySQL status and system state. Each variable has the value and description. Let’s take one status variable called Bytes_sent. This variable stores the number of bytes sent to all clients. When we run select statement, database gives the query result which is information. This information can be measured in bytes. It is actually number of symbols in query result. Each time we run the select query, it will add all these bytes to this variable. Likewise MySQL has all kind of variables for all cases and states.
+For example Com_alter_db counts the number of alter statements we perform.
+System variables hold values about the overall MySQL settings. It is not related to active connection. For example, variable called back_log has the value of 80. It means at one time MySQL can have 80 requests from clients.
+Character_set_database holds the latin1 value. It means by when we create database, its character set is set to latin1 by default.
