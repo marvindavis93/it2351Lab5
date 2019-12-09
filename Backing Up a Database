@@ -1,0 +1,8 @@
+A.	What is a backup and restore strategy and why are they important?  
+  
+Out database may contain very valuable information. Imagine it the bank database where all information about customers and their balances are stored. If that database gets deleted accidentally, then it is disaster. To prevent such cases, database is backed up periodically. Now, how often it will be backed up is based on the business type. You may backup monthly, weekly or daily. Of course, backing up requires memory resources and slows down the processes. So, we should choose the time of the day and day of the week where database is least used and put that time to automatic backup. Database management systems backs up automatically at that time. In case of disaster, that database can be restored and you lose only he data after the backup time. If it daily, you lose at most one-day data, if it is weekly, you lose at most one week of data. That’s why every database must have backup strategy.
+
+B.	What is the difference between a full and incremental backup?  
+
+In full back up, you back up all the data and it will contain all the data until that day and you can restore it using this full back up any time just using this one backup file. Incremental backup is when you make one full back up and do incremental one which means only the data since last backup will be backed up. So, you will have one full back up and several incremental ones. Each time, incremental backup backs up changes made to the database since last incremental backup. If you ever want to restore, you need all incremental backup files and last full backup.
+  
