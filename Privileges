@@ -1,0 +1,46 @@
+A.	Explain the following code (copy and paste the code into your readme.md file and comment all sections):  
+  
+CREATE USER guitar_admin@localhost IDENTIFIED BY 'pa55word';  
+
+This statement creates new user with user name “guitar_admin” at local host and password for this user is set “pa55word”
+
+
+CREATE USER guitar_user@localhost IDENTIFIED BY 'pa55word';  
+  
+  This statement creates new user with user name “guitar_user” at local host and password for this user is set “pa55word”
+
+GRANT ALL  
+ON guitar.*  
+TO guitar_admin@localhost;  
+   
+This statement grants all privileges related with guitar database to user guitar_admin at localhost. Now, this user can add, delete, update the tables and all operations done on tables like triggers, indexes, events and much more.
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE  
+ON guitar.*  
+TO guitar_user@localhost;  
+
+This statement grants only select, insert, update and delete privileges on guitar database to user guitar_user at localhost. Now, this user have permission to add, delete, update the tables.
+
+B.	What are the privilege levels that can be granted to a user?  
+ 
+ There are three types of privileges in MySQL. Administrative privileges allows users to manage all in MySQL. These privileges are global not related to any particular database.
+Database privileges allows users to manage all within one or more databases.
+Object privileges allows users to manage within assigned objects. Objects can be tables, views and so on. Or they can be on one type only for example only select on all tables. 
+
+
+C.	How would this code change to grant column privileges to the customer first_name, last_name and email_address?   
+  
+GRANT SELECT (first_name, last_name , email_address), INSERT (first_name, last_name , email_address), UPDATE (first_name, last_name , email_address) ON guitar.customers TO guitar_user@localhost;
+
+Now, guitar_user at localhost can do anything except deleting these columns on customer table of guitar database.
+
+  
+ 
+ D. Why would you want this ?
+ 
+For example, we want that all students should have up to date addresses. Now we tell that please login to database and update all your current addresses and emails. In such cases, we allow students to change only address columns. If we grant privileges to change all columns, one student can change his name to another and steal his identity or change his grade if it is in the same table or do operations that we don’t want. That’s why it is better to limit actions to users/roles and add one by one that is needed. 
+ser at localhost can do anything except deleting these columns on customer table of guitar database.
+
+
+
