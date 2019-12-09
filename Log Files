@@ -1,0 +1,13 @@
+
+
+Log files are very important for databases in term of security. Each transaction is recorded in the log file. Using the log files, we can revert to previous state of the databases or roll back transactions that are incomplete (database uses internally log file to roll back). We can also use log file to detect activities of malicious users or any user. It is like a journal where each modification to the database is written in detail.  
+
+MySQL has several types of log files based on the operation type or problem type.
+Error log logs problems related with running, starting and stopping the mysqld.
+General query log logs connections with client, it is us
+Binary log logs the transactions that change the data. This log can be used to revert to previous state in case
+Relay log is changes to databased when replicated the above log
+Slow query log logs the queries that took more than set max time for the query
+DDL log logs DDL statements
+
+  
